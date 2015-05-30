@@ -1,6 +1,6 @@
-//package IO;
+package IO;
 
-//import util.Graph;
+import util.Graph;
 
 public class OutputText implements Output {
     @Override
@@ -14,7 +14,7 @@ public class OutputText implements Output {
     }
 
     @Override
-    public void write() {
+    public void write(Graph graph) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
