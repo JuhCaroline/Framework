@@ -9,6 +9,8 @@ package util;
  *
  * @author thiag
  */
-public interface Statistic {
-    public void addSample(Graph g);
+public class EdgeNotExistsException extends Exception{
+    public EdgeNotExistsException(String message) {
+        super(message);
+    }
 }

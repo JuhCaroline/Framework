@@ -11,8 +11,11 @@ public class Edge implements Comparable<Edge>{
         this.target = target;
         this.value = value;
     }
-
-    public Vertex getSource() {
+    
+    public Vertex getSource() throws VertexNotConnectedException {
+        if(source == null) {
+            throw new VertexNotConnectedException("Vertice não existe.");
+        }
         return source;
     }
 
@@ -20,11 +23,14 @@ public class Edge implements Comparable<Edge>{
         this.source = source;
     }
 
-    public Vertex getTarget() {
+    public Vertex getTarget() throws VertexNotConnectedException {
+        if(this.target == null) {
+            throw new VertexNotConnectedException("Vertice não existe.");
+        }
         return target;
     }
 
-    public void setTarget(Vertex target) {
+    public void setTarget(Vertex target){
         this.target = target;
     }
 

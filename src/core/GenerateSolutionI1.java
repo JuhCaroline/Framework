@@ -7,11 +7,12 @@ import java.util.Collections;
 import util.Edge;
 import util.Graph;
 import util.Vertex;
+import util.VertexNotConnectedException;
 
-public class Kruskal implements GenerateSolution {
+public class GenerateSolutionI1 implements GenerateSolution {
 
     @Override
-    public Graph generateInitialSolution(Graph graph) {
+    public Graph generateInitialSolution(Graph graph) throws VertexNotConnectedException {
         ArrayList<Edge> EdgesOrdained; //conjunto de arestas do grafo ordenadas por valor
         //cria os makeSets
         for (Vertex v : graph.getVertices()) {

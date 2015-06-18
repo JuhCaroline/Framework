@@ -58,6 +58,10 @@ public class Graph implements Comparable<Graph> {
         return this.maxDegree;
     }
 
+    public void setMaxDegree(int maxDegree) {
+        this.maxDegree = maxDegree;
+    }
+
     @Override
     public String toString() {
         String s = "V = {";
@@ -87,6 +91,26 @@ public class Graph implements Comparable<Graph> {
         s += etmp.toString() + "}";
         
         return s;
+    }
+    
+    public boolean hasCycle() throws VertexNotConnectedException {
+
+        for (Vertex v : vertices) {
+            v.setDisjointSet(UnionFind.makeSet(v));
+        }
+
+        for (Edge aresta1 : this.edges) {
+            UnionFind<Vertex> v1 = aresta1.getSource().getDisjointSet();
+            UnionFind<Vertex> v2 = aresta1.getTarget().getDisjointSet();
+
+            if (!UnionFind.areUnited(v1, v2)) {
+                v1.union(v2);
+            } else {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     @Override
