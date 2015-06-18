@@ -1,0 +1,7 @@
+==================================
+Como executar
+==================================
+
+1) Baixe o projeto do GitHub.
+2) Abra o projeto no Netbeans.
+3) Execute o projeto, ou digite F6.
